@@ -12,8 +12,7 @@ spec:
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: CLUSTERID
-      machine.openshift.io/cluster-api-machineset: CLUSTERID-work
-erocs-sa-east-1c
+      machine.openshift.io/cluster-api-machineset: CLUSTERID-workerocs-sa-east-1c
   template:
     metadata:
       creationTimestamp: null
@@ -21,8 +20,7 @@ erocs-sa-east-1c
         machine.openshift.io/cluster-api-cluster: CLUSTERID
         machine.openshift.io/cluster-api-machine-role: workerocs
         machine.openshift.io/cluster-api-machine-type: workerocs
-        machine.openshift.io/cluster-api-machineset: CLUSTERID-wo
-rkerocs-sa-east-1c
+        machine.openshift.io/cluster-api-machineset: CLUSTERID-workerocs-sa-east-1c
     spec:
       metadata:
         creationTimestamp: null
