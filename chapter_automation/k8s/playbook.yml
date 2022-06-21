@@ -24,4 +24,26 @@
         ports:
           - port: 8080
             protocol: TCP
-  
+            
+            
+    - name: Get a info about Pods that are web apps in dev or test
+      k8s_info:
+        kind: Pod
+        label_selectors:
+          - app = nodejs-ex
+
+    - name: Scale deployment up
+      k8s_scale:
+        kind: DeploymentConfig
+        name: nodejs-ex
+        replicas: 3
+
+    - name: Expose https port with ClusterIP
+      k8s_service:
+        state: present
+        name: nodejs-ex
+        ports:
+          - port: 443
+            protocol: TCP
+        selector:
+          app: nodejs-ex  
