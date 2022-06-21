@@ -34,6 +34,7 @@
 
     - name: Scale deployment up
       k8s_scale:
+        api_version: apps.openshift.io/v1
         kind: DeploymentConfig
         name: nodejs-ex
         replicas: 3
