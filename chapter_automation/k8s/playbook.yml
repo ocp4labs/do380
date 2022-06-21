@@ -32,12 +32,6 @@
         label_selectors:
           - app = nodejs-ex
 
-    - name: Scale deployment up
-      k8s_scale:
-        api_version: apps.openshift.io/v1
-        kind: DeploymentConfig
-        name: nodejs-ex
-        replicas: 3
 
     - name: Expose https port with ClusterIP
       k8s_service:
